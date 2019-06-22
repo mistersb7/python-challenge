@@ -52,34 +52,19 @@ print("-------------------------")
 print(f"Winner:{winner}")
 print("-------------------------")
 
-
-
-#* In this challenge, you are tasked with helping a small, rural town modernize its vote-counting process. (Up until now, Uncle Cleetus had been trustfully tallying them one-by-one, but unfortunately, his concentration isn't what it used to be.)
-
-#* You will be give a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. Your task is to create a Python script that analyzes the votes and calculates each of the following:
-
- # * The total number of votes cast
-
- # * A complete list of candidates who received votes
-
- # * The percentage of votes each candidate won
-
- # * The total number of votes each candidate won
-
- # * The winner of the election based on popular vote.
-
-#* As an example, your analysis should look similar to the one below:
-
- # ```text
- # Election Results
- # -------------------------
-  #Total Votes: 3521001
- # -------------------------
- # Khan: 63.000% (2218231)
- # Correy: 20.000% (704200)
-  #Li: 14.000% (492940)
- # O'Tooley: 3.000% (105630)
-  #-------------------------
- # Winner: Khan
- # -------------------------
- # ```
+txt_file= open("Output.txt", 'w', newline='')
+txt_file.write(f"\n")
+txt_file.write(f"Candidates who received votes: {ucandidate}\n")
+txt_file.write(f"\n")
+txt_file.write(f"Election Results\n")
+txt_file.write(f"-------------------------\n")
+txt_file.write(f"Total votes: {len(totalvotes)}\n")
+txt_file.write(f'-------------------------\n')
+txt_file.write(f"Khan: {khanpercent}% ({len(khanvotes)})\n")
+txt_file.write(f"Correy: {correypercent}% ({len(correyvotes)})\n")
+txt_file.write(f"Li: {lipercent}% ({len(livotes)})\n")
+txt_file.write(f"O'Tooley: {otooleypercent}% ({len(otooleyvotes)})\n")
+txt_file.write("-------------------------\n")
+txt_file.write(f"Winner:{winner}\n")
+txt_file.write("-------------------------\n")
+txt_file.close()
